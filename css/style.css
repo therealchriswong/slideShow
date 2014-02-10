@@ -1,0 +1,70 @@
+body {
+    background-image: url(http://subtlepatterns.com/patterns/dark_wall.png);
+}
+
+h1 {
+    text-align: center;
+    margin: 50px;
+    font-family: 'Open Sans', sans-serif;    
+    font-size: 50px;
+    color: white;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+#slideShowContainer {
+    overflow: hidden;
+    max-width: 960px;    
+    border: 12px rgba(255,255,240,1) solid;
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+    margin: auto;
+}
+
+#slideImages {
+    -webkit-transition:all 1.0s ease-in-out;
+    -moz-transition:all 1.0s ease-in-out;
+    -o-transition:all 1.0s ease-in-out;
+    transition:all 1.0s ease-in-out;
+}
+
+#slideImages img {
+    float: left;
+}
+
+#pageList {
+    position: absolute;
+    width: 100%;
+    left: 43%;
+    height: 515px;
+    line-height: 40px;
+    bottom: 0;
+    z-index: 4;
+}
+
+#pageList li {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 7px;
+    background: #fff;
+    opacity: .7;
+    text-indent: -9999px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 150ms;
+}
+
+#pageList li:hover,
+#pageList li.active{
+    opacity: 1;
+    color: red;
+}
+
+#prev,
+#next {
+    position: absolute;
+}

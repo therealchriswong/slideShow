@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>An HTML5 Slideshow</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<h1>Slide Show</h1>
+<hr>
+
+<div id='slideShowContainer'>
+    <div id='slideImages'>
+        <img src="img/duck.jpg">
+        <img src="img/flamingo.jpg">
+        <img src="img/flowers.jpg">
+        <img src="img/head_rock.jpg">
+        <img src="img/ligurian_sea.jpg">
+        <img src="img/lily.jpg">
+        <img src="img/dunes_and_harbour.jpg">
+    </div>
+    <div id="slideController">
+        <!-- <div id="prev">&lsaquo;</div>
+        <div id="next">&rsaquo;</div> -->
+        <div id="pageList">
+            <ul>
+                <li>Image 1</li>
+                <li>Image 2</li>
+                <li>Image 3</li>
+                <li>Image 4</li>
+                <li>Image 5</li>
+                <li>Image 6</li>
+                <li>Image 7</li>
+            </ul>
+        </div>       
+    </div>
+</div>
+
+
+ <!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var currentPosition = 0;
+        var imgWidth = 960;
+        var slideImages = $("#slideImages img");
+        var numberOfImages = slideImages.length;
+        var width = numberOfImages * imgWidth;
+         
+        $('#slideImages').css('width', width );
+
+        $('#pageList').on('click','li',function(){
+            $('#slideImages').css('transform','translateX(' + $(this).index() * -960 + 'px)' );
+
+            $('#pageList li').removeClass('selected');
+
+            $(this).addClass('active');
+        });
+
+
+    });
+</script>
+</body>
+</html>
